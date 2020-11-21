@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="{% static 'Places/styles.css' %}">
+
+  </head>
+
+  <body>
+    <div class="cards">
+    {% load index %} 
+    {% for i in num %}
+
+    <a href={{ links|index:i }}>
+    <div class="card">
+      <img src={{ photo_links|index:i }} alt="">
+      <h3>{{ headings|index:i }}</h3>
+      <p>{{ texts|index:i }}</p>
+    </div>
+    </a>
+    <hr>
+
+    {% endfor %}
+    </div>
+  </body>
+</html>
