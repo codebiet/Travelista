@@ -1,11 +1,10 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
 
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
@@ -15,14 +14,23 @@
     <!-- css -->
     <link rel="stylesheet" href="{% static 'Places/styles.css' %}">
 
+    <title>Document</title>
   </head>
-
   <body>
-    
-    <form action="places_to_visit" method="GET">
-      {% csrf_token %}
-      <input type="text" name="city_name">
-      <input type="submit" value="Submit">
-    </form>
+    <div class="cards">
+      {% load index %} 
+      {% for i in num %}
+
+      <a href={{ links|index:i }}>
+        <div class="card">
+          <img src={{ photo_links|index:i }} alt="" />
+          <h3>{{ headings|index:i }}</h3>
+          <p>{{ texts|index:i }}</p>
+        </div>
+      </a>
+      <hr />
+
+      {% endfor %}
+    </div>
   </body>
 </html>
