@@ -21,14 +21,14 @@
       {% load index %} 
       {% for i in num %}
 
-      <a href={{ links|index:i }}>
-        <div class="card">
-          <img src={{ photo_links|index:i }} alt="" />
-          <h3>{{ headings|index:i }}</h3>
-          <p>{{ texts|index:i }}</p>
-        </div>
-      </a>
-      <hr />
+        <a href={{ links|index:i }}>
+          <div class="card">
+            <img src={{ photo_links|index:i }} alt="" />
+            <h3>{{ headings|index:i }}</h3>
+            <p>{{ texts|index:i }}</p>
+          </div>
+        </a>
+        <hr />
 
       {% endfor %}
     </div>

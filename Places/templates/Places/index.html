@@ -19,10 +19,10 @@
 
   <body>
     
-    <form action="places_to_visit" method="GET">
+    <form action="city" method="GET">
       {% csrf_token %}
-      <input type="text" name="city_name">
-      <input type="submit" value="Submit">
+      <input class="search-box" type="text" name="city_name">
+      <input class="btn btn-danger" type="submit" value="Search">
     </form>
   </body>
 </html>

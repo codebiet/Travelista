@@ -1,0 +1,31 @@
+{% load index %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <img src={{ city_image_link }} alt="">
+    <h2>{{ city_heading }}</h2>
+    <span>
+        <h3>{{ state }}</h3>
+        <h3>{{ country }}</h3>
+        <h3>{{ covid_details }}</h3>
+    </span>
+    <p><em><strong>{{ para }}</strong></em></p>
+    <a href="{% url 'places_to_visit' city_name %}">
+        <h2>Places to visit</h2>
+    </a>
+    <a href="{% url 'food' city_name %}">
+        <h2>Famous foods!</h2>
+    </a>
+</body>
+</html>
