@@ -1,9 +1,9 @@
 from django.urls import path
-from Places import views
+from Places import views as Places_views
 
 urlpatterns = [
-    path('', views.index),
-    path('city', views.city),
-    path('places_to_visit/<str:city_name>', views.places_to_visit, name='places_to_visit'),
-    path('food/<str:city_name>', views.food, name='food')
+    path('', Places_views.index, name="index"),
+    path('city/', Places_views.city, name="city"),
+    path('places_to_visit/<str:city_name>/', Places_views.places_to_visit, name='places_to_visit'),
+    path('food/<str:city_name>/', Places_views.food, name='food'),
 ]
