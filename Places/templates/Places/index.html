@@ -1,28 +1,25 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'Places/base.html' %}
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+{% block title %}Travelista | Home{% endblock %}
 
-    <!-- bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+{% block content %}
+<div class="container">
 
-    <!-- css -->
-    <link rel="stylesheet" href="{% static 'Places/styles.css' %}">
+    <div class="mt-5 text-center">
+        <h1 class="display-1">Welcome to,<br> Travelista</h1>
+        <p>Wanna find something exciting about a place? Search below to see what is waiting for you...</p>
+    </div>
 
-  </head>
-
-  <body>
+    <div class="mt-5 text-center ml-auto mr-auto" style="max-width: 600px;">
+        <form action="city" method="GET">
+            <div class="input-group input-group-sm">
+                <input type="text" class="form-control" name="city_name" placeholder="Enter city name...">
+                <div class="input-group-append">
+                    <button class="btn btn-success" type="submit">Search</button>
+                </div>
+              </div>
+        </form>
+    </div>
     
-    <form action="city" method="GET">
-      {% csrf_token %}
-      <input class="search-box" type="text" name="city_name">
-      <input class="btn btn-danger" type="submit" value="Search">
-    </form>
-  </body>
-</html>
+</div>
+{% endblock %}

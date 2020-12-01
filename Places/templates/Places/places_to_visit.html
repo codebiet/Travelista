@@ -1,36 +1,66 @@
-{% load static %}
+{% extends 'Places/index.html' %}
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+{% block title %}Travelista | {{ city_name }} - Places to visit{% endblock %}
 
-    <!-- bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+{% block css %}
+<style>
 
-    <!-- css -->
-    <link rel="stylesheet" href="{% static 'Places/styles.css' %}">
+    body {
+        background: black;
+    }
 
-    <title>Document</title>
-  </head>
-  <body>
-    <div class="cards">
-      {% load index %} 
-      {% for i in num %}
+    .card {
+        transition: 0.2s;
+    }
 
-        <a href={{ links|index:i }}>
-          <div class="card">
-            <img src={{ photo_links|index:i }} alt="" />
-            <h3>{{ headings|index:i }}</h3>
-            <p>{{ texts|index:i }}</p>
-          </div>
-        </a>
-        <hr />
+    .card:hover {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+        transition: 0.2s;
+    }
 
-      {% endfor %}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5 mb-5" style="border: 2px solid rgb(255, 255, 255); border-radius: 5px; background: rgb(233, 255, 208);">
+    <div class="row">
+        <div class="col-6">
+            <small>
+                <a href="{% url 'city' %}?city_name={{ city_name }}">&lt;&lt; Search - {{ city_name }}</a>
+                <span class="ml-1">|</span>
+                <a href="{% url 'food' city_name %}" class="ml-1">Famous food &gt;&gt;</a>
+            </small>
+        </div>
+
+        <div class="col-6 text-right">
+            <small>
+                <a href="{% url 'index' %}">Travelista</a>
+            </small>
+        </div>
+        
     </div>
-  </body>
-</html>
+
+    <h2 class="mt-4 text-center">Top places to visit in {{ city_name }}</h2>
+
+    {% if places %}
+    <div class="row mt-5">
+        {% for place in places.values %}
+        <div class="col-sm-4 mb-5">
+            <div class="card">
+                <img class="card-img-top" src="{{ place.photo_link }}" alt="{{ place.name }} - Image">
+                <div class="card-body">
+                  <h4 class="card-title">{{ place.name }}</h4>
+                  <p class="card-text text-justify" style="line-height: 16px;"><small>{{ place.info }}</small></p>
+                  <a href="{{ place.link }}" class="btn btn-sm btn-primary">know more &gt;&gt;</a>
+                </div>
+              </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    {% else %}
+        <p class="text-center"><i>No result found...</i></p>
+    {% endif %}
+
+</div>
+{% endblock %}
