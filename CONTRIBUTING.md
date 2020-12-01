@@ -12,7 +12,7 @@ You generally only need to submit a CLA once, so if you've already submitted one
 
 ## Code of conduct
 
-Powflix has adopted "Contributor Covenant Code of Conduct V2.0", participants are expected to follow the guildlines described in [CODE_OF_CONDUCT](https://github.com/powflix/travelista/blob/master/CODE_OF_CONDUCT.md)
+Powflix has adopted "Contributor Covenant Code of Conduct V2.0", participants are expected to follow the guildlines described in [CODE_OF_CONDUCT](https://github.com/powflix/travelista/blob/main/CODE_OF_CONDUCT.md)
 
 ## Code reviews
 
@@ -36,7 +36,7 @@ Each of these tasks is highly impactful, and maintainers will greatly appreciate
 
 Code-level contributions to Travelista generally come in the form of pull requests. These are done by forking the repo and making changes locally. The process of proposing a change to Travelista can be summarized as follows:
 
-* Fork the Travelista repository and create your branch from `master`.
+* Fork the Travelista repository and create your branch from `main`.
 * Make the desired changes to Travelista sources and perform tests.
 * If you've added code that should be tested, add tests.
 * Ensure the test suite passes, either locally or on CI once you opened a pull request.
@@ -56,11 +56,11 @@ Contributions to Travelista is not limited to GitHub. You can help others by sha
 
 ## Coding guidelines
 
-Please see [CODING_CONVENTIONS_STANDARDS](https://github.com/powflix/travelista/blob/master/docs/CODING_CONVENTIONS_STANDARDS.md) in `/docs` repository for good practices of Coding Styles.
+Please see [CODING_CONVENTIONS_STANDARDS](https://github.com/powflix/travelista/blob/main/docs/CODING_CONVENTIONS_STANDARDS.md) in `/docs` repository for good practices of Coding Styles.
 
 ## Good Pull Request
 
-Please see [PR_GUIDELINES](https://github.com/powflix/travelista/blob/master/docs/PR_GUIDELINES.md) in `/docs` repository for good practices of Pull Requests.
+Please see [PR_GUIDELINES](https://github.com/powflix/travelista/blob/main/docs/PR_GUIDELINES.md) in `/docs` repository for good practices of Pull Requests.
 
 ## Reporting Security Issues
 
