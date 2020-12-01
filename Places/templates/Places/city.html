@@ -1,31 +1,60 @@
-{% load index %}
+{% extends 'Places/index.html' %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+{% block title %}Travelista | {{ city_name }}{% endblock %}
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+{% block css %}
+<style>
+    body {
+        background: black;
+    }
+</style>
+{% endblock %}
 
-</head>
-<body>
-    <img src={{ city_image_link }} alt="">
-    <h2>{{ city_heading }}</h2>
-    <span>
-        <h3>{{ state }}</h3>
-        <h3>{{ country }}</h3>
-        <h3>{{ covid_details }}</h3>
-    </span>
-    <p><em><strong>{{ para }}</strong></em></p>
-    <a href="{% url 'places_to_visit' city_name %}">
-        <h2>Places to visit</h2>
-    </a>
-    <a href="{% url 'food' city_name %}">
-        <h2>Famous foods!</h2>
-    </a>
-</body>
-</html>
+{% block content %}
+    <div class="container mt-5 mb-5" style="border: 2px solid rgb(255, 255, 255); border-radius: 5px; background: rgb(233, 255, 208);">
+        <div class="row">
+            <div class="col-6">
+                <small>
+                    <a href="{% url 'places_to_visit' city_name %}" class="ml-1">&lt;&lt; Places to visit</a>
+                    <span class="ml-1">|</span>
+                    <a href="{% url 'food' city_name %}" class="ml-1">Famous food &gt;&gt;</a>
+                </small>
+            </div>
+    
+            <div class="col-6 text-right">
+                <small>
+                    <a href="{% url 'index' %}">Travelista</a>
+                </small>
+            </div>
+            
+        </div>
+
+        {% if city_info %}
+            <div class="text-center mt-4">
+                <img class="img-fluid img-thumbnail" width="500px" src="{{ city_info.city_image_link }}" alt="{{ city_info.city_heading }} - Image">
+            </div>
+
+            <div class="mt-4 text-center">
+                <h2>{{ city_info.city_heading }}, {{ city_info.state }} - {{ city_info.country }}</h2>
+            </div>
+
+            <div class="mt-2 text-center">
+                <p><i><b>COVID-19 Stats: </b></i><i class="text-danger">{{ city_info.covid_details }}</i></p>
+            </div>
+
+            <div class="mt-4 text-justify">
+                <p>{{ city_info.para }}</p>
+            </div>
+
+            <div class="text-center mt-4 mb-4">
+                <a href="{% url 'places_to_visit' city_name %}">Places to visit</a>
+                <span class="ml-3">|</span>
+                <a class="ml-3" href="{% url 'food' city_name %}">Famous food</a>
+            </div>
+
+        {% else %}
+            <h1 class="text-center mt-4 mb-4">No result found for '{{ city_name }}'</h1>
+        {% endif %}
+
+    </div>
+{% endblock %}

@@ -1,5 +1,7 @@
-from bs4 import BeautifulSoup as bs
 import requests
+
+from bs4 import BeautifulSoup as bs
+
 
 def city_info(city_name):
     try:
@@ -19,13 +21,14 @@ def city_info(city_name):
         covid_details = location.find('div', class_='mb-40 font-smaller').text[6:-12].replace('  \n\t', ', ')
 
         contents = soup.find('div', class_='col-lg-8 pr-lg-2')
-        # para_heading = contents.find('h2').text[2:-2]
+        
         para = ' '.join([i.text[1:] for i in contents.find('div', class_='readMoreText').find_all('p')[0:3:2]])
 
-        return city_image_link, city_heading, state, country, covid_details, para
+        return {'city_image_link': city_image_link, 'city_heading': city_heading, 'state': state, 'country': country, 'covid_details': covid_details, 'para': para}
 
     except:
-        return [], [], [], [], [], [], []
+        return {}
+
 
 def places_to_visit(city_name):
     try:    
@@ -35,55 +38,48 @@ def places_to_visit(city_name):
         soup = bs(page.content, 'html.parser')
         cards = soup.find_all('div', class_="card content-card animation-slide-up")
 
-        headings, links, photo_links, texts = [], [], [], []
-
-        total_places, lim = 0, 30
+        places = {}
+        total_places, lim = 1, 30
+        
         for card in cards:
 
-            headings.append(card.find('h3').text)
-
-            links.append(card.find('a')['href'])
-
-            photo_links.append(card.find('img', class_="card-img-top lazy")['data-original'])
-
-            texts.append(card.find('p', class_='card-text').text)
+            places[total_places] = {'name': card.h3.string, 'link': card.a['href'], 'photo_link': card.img['data-original'], 'info': card.find('p', class_='card-text').text}
 
             total_places += 1
-            if total_places == lim:
+            if total_places > lim:
                 break
 
-        return headings, links, photo_links, texts, total_places
+        return places
 
     except:
-        return [], [], [], []
+        return {}
+
 
 def food(city_name):
-
     try:
         url = 'https://www.holidify.com/places/' + city_name+ '/restaurants-places-to-eat-local-cuisine.html'
         page = requests.get(url)
 
         soup = bs(page.content, 'html.parser')
-
         cards = soup.find('div', class_='row no-gutters mb-50 negative-margin-mobile').find_all('div', class_='col-12 col-md-6 pr-md-3')
         
-        photo_links, restaurants_info, total_restaurants, lim = [], [], 0, 30
+        restaurants = {}
+        total_restaurants, lim = 1, 30
 
         for card in cards:
 
-            if card.find('img') != None:
-                photo_links.append(card.find('img', class_="card-img-top lazy")['data-original'])
-            else:
-                photo_links.append('')
+            try:
+                photo_link = card.img['data-original']
+            except:
+                photo_link = None
 
-            restaurants_info.append([i for i in card.text.split('\n') if i not in ['', ' ', '                        ']])
+            restaurants[total_restaurants] = {'name': card.h3.string, 'info': card.p.string, 'photo_link': photo_link}
 
             total_restaurants += 1
-            if total_restaurants == lim:
+            if total_restaurants > lim:
                 break
             
-        return restaurants_info, photo_links, total_restaurants
+        return restaurants
 
     except:
-        return [], [], 0
-
+        return {}
