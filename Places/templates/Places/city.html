@@ -1,0 +1,53 @@
+{% extends 'Places/index.html' %}
+
+{% block title %}Travelista | {{ city_name }}{% endblock %}
+
+{% block css %}
+<style>
+    body {
+        background: black;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-5 mb-5" style="border: 2px solid rgb(255, 255, 255); border-radius: 5px; background: rgb(233, 255, 208);">
+        <div class="row">
+    
+            <div class="col-6 text-right">
+                <small>
+                    <a href="{% url 'index' %}">Travelista</a>
+                </small>
+            </div>
+            
+        </div>
+
+        {% if para %}
+            <div class="text-center mt-4">
+                <img class="img-fluid img-thumbnail" width="500px" src="{{ city_image_link }}" alt="{{ city_info.city_heading }} - Image">
+            </div>
+
+            <div class="mt-4 text-center">
+                <h2>{{ city_name }}, {{ state }}, {{ country }}</h2>
+            </div>
+
+            <div class="mt-2 text-center">
+                <p><i><b>COVID-19 Stats: </b></i><i class="text-danger">{{ covid_details }}</i></p>
+            </div>
+
+            <div class="mt-4 text-justify">
+                <p>{{ para }}</p>
+            </div>
+
+            <div class="text-center mt-4 mb-4">
+                <a href="{% url 'places_to_visit' city_name %}">Places to visit</a>
+                <span class="ml-3">|</span>
+                <a class="ml-3" href="{% url 'food' city_name %}">Famous food</a>
+            </div>
+
+        {% else %}
+            <h1 class="text-center mt-4 mb-4">No result found for '{{ city_name }}'</h1>
+        {% endif %}
+
+    </div>
+{% endblock %}

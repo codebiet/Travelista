@@ -1,0 +1,55 @@
+{% extends 'Places/places_to_visit.html' %}
+
+{% block title %}Travelista | {{ city_name }} - Famous food{% endblock %}
+
+{% block content %}
+<div class="container mt-5 mb-5" style="border: 2px solid rgb(255, 255, 255); border-radius: 5px; background: rgb(233, 255, 208);">
+    <div class="row">
+        <div class="col-6">
+            <small>
+                <a href="{% url 'city' %}?city_name={{ city_name }}">&lt;&lt; Search - {{ city_name }}</a>
+                <span class="ml-1">|</span>
+                <a href="{% url 'places_to_visit' city_name %}" class="ml-1">Places to visit &gt;&gt;</a>
+            </small>
+        </div>
+
+        <div class="col-6 text-right">
+            <small>
+                <a href="{% url 'index' %}">Travelista</a>
+            </small>
+        </div>
+        
+
+    </div>
+
+    <h2 class="mt-4 text-center">Famous food in {{ city_name }}</h2>
+
+    {% if restaurants %}
+    <div class="row mt-5">
+        {% for restaurant in restaurants.values %}
+        <div class="col-sm-4 mb-5">
+            <div class="card">
+                
+                {% if restaurant.photo_link %}
+                    <img class="card-img-top" src="{{ restaurant.photo_link }}">
+                {% endif %}
+
+                <div class="card-body">
+                  <h4 class="card-title">{{ restaurant.name }}</h4>
+                    {% for inf in restaurant.res_items %}
+                        <p>{{ inf }}</p>
+                    {% endfor %}
+                  <p class="card-text text-justify" style="line-height: 16px;"><small>{{ restaurant.info }}</small></p>
+                  <!-- <a href="{{ place.link }}" class="btn btn-sm btn-primary">know more &gt;&gt;</a> -->
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    {% else %}
+        <p class="text-center"><i>No result found...</i></p>
+    {% endif %}
+
+</div>
+{% endblock %}

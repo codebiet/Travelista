@@ -1,0 +1,25 @@
+{% extends 'Places/base.html' %}
+
+{% block title %}Travelista | Home{% endblock %}
+
+{% block content %}
+<div class="container">
+
+    <div class="mt-5 text-center">
+        <h1 class="display-1">Welcome to,<br> Travelista</h1>
+        <p>Wanna find something exciting about a place? Search below to see what is waiting for you...</p>
+    </div>
+
+    <div class="mt-5 text-center ml-auto mr-auto" style="max-width: 600px;">
+        <form action="city" method="GET">
+            <div class="input-group input-group-sm">
+                <input type="text" class="form-control" name="city_name" placeholder="Enter city name...">
+                <div class="input-group-append">
+                    <button class="btn btn-danger" type="submit">Search</button>
+                </div>
+              </div>
+        </form>
+    </div>
+    
+</div>
+{% endblock %}
