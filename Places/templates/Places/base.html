@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
     <head>
@@ -11,7 +12,48 @@
         <title>{% block title %}{% endblock %}</title>
 
         <!-- Custom CSS-->
-        {% block css %}{% endblock %}
+        {% block style %}
+        <style>
+            .navbar{
+                height: 67px;
+            }
+            .listItem{
+                margin-bottom: 40px;
+            }
+            .logo{
+                max-height: 80px;
+                max-width: 100px;
+                margin-bottom: 10px;
+            }
+            .lolo{
+                margin-bottom: 30px;
+            }
+            .text-big{
+                margin-top: 120px;
+            }
+            .text-above-bestplaces{
+                margin-top: 40px;
+            }
+            .wrap_photo1{
+                width: 100%;
+            }
+            
+        </style>
+        {% endblock %}
+
+        {% block css %}
+            <link rel="stylesheet" href="{% static '/css/styling.css' %}">
+            <link rel="stylesheet" href="{% static '/css/responsive.css' %}">
+            <link rel="stylesheet" href="{% static '/css/styl.css' %}">
+            <link rel="stylesheet" href="{% static '/css/style_about.css' %}">
+            <link rel="stylesheet" href="{% static 'styling.css' %}">
+            <link rel="shortcut icon" href="{% static '/images/favicon.jpg' %}" type="image/x-icon">  
+        {% endblock %}
+
+        {% comment %} {% block script %}
+            <script src="{% static '/js/resp.js' %}">
+            <script src="{% static '/resp.js' %}">
+        {% endblock %} {% endcomment %}
 
     </head>
 

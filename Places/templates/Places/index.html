@@ -1,25 +1,113 @@
+
 {% extends 'Places/base.html' %}
+{% load static %}
 
 {% block title %}Travelista | Home{% endblock %}
 
+
 {% block content %}
-<div class="container">
+    <nav class="navbar bg height-nav-resp">
+        <ul class="nav-list v-class-resp">
+            <div class="logo"><img src="{% static '/images/logo.jpg' %}" alt="logo" class="lolo"></div>
+            <li class="listItem"><a href="{% url 'index' %}">Home</a></li>
+            <li class="listItem"><a href="{% url 'about' %}">About</a></li>
+            {% comment %} <li><a href="{% url 'city' %}">Best Places to Visit</a></li> {% endcomment %}
+            <li class="listItem"><a href="{% url 'contact' %}">Contact Us</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line"> </div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
 
-    <div class="mt-5 text-center">
-        <h1 class="display-1">Welcome to,<br> Travelista</h1>
-        <p>Wanna find something exciting about a place? Search below to see what is waiting for you...</p>
-    </div>
+    <section class="bg firstSection">
+        <div class="box-main">
 
-    <div class="mt-5 text-center ml-auto mr-auto" style="max-width: 600px;">
-        <form action="city" method="GET">
-            <div class="input-group input-group-sm">
-                <input type="text" class="form-control" name="city_name" placeholder="Enter city name...">
-                <div class="input-group-append">
-                    <button class="btn btn-danger" type="submit">Search</button>
+            <div class="first-half">
+                <p class="text-big">Welcome to Travelista</p>
+                <p class="text-small">One of the oldest civilisations in the world, India is a mosaic of multicultural
+                    experiences. With a rich heritage and myriad attractions, the country is among the most popular
+                    tourist destinations in the world.</p>
+            </div>
+
+            <div class="second-half">
+                <img src="{% static '/images/mid.png' %}" alt="india toursim">
+            </div>
+            
+        </div>
+
+        <div class="mt-5 text-center ml-auto mr-auto" style="max-width: 500px;">
+            <form action="city" method="GET">
+                <div class="input-group input-group-sm">
+                    <input type="text" class="form-control" name="city_name" placeholder="Enter city name...">
+                    <div class="input-group-append">
+                        <button class="btn btn-danger" type="submit">Search</button>
+                    </div>
                 </div>
-              </div>
-        </form>
-    </div>
-    
-</div>
+            </form>
+        </div>
+
+    </section>
+    <hr id="best-places">
+    <p class="text-above-bestplaces">BEST PLACES TO VISIT</p>
+    <section class="section" ">
+        
+        <div class=" para">
+        <p class="secTag text-big">The Golden Temple, Amritsar</p>
+        <p class="sectionSubTag text-small">Amritsar’s Golden Temple, in the state of Punjab, northern India, is one of
+            the country’s most spectacular sites. It’s natural beauty is hard to beat; the gilt-edged temple shimmers in
+            the large pool of water that surrounds it. Also known as Sri Harmandir Sahib (Temple of God), the site is
+            visited by over 100,000 people every day and is of the world's holiest shrines.
+            It’s a breath-taking spectacle, full of colourful people from all faiths and nationalities. Be prepared for
+            an intense experience and one of the friendliest places in India.
+        </p>
+        </div>
+        <div class="thumbnail">
+            <img src="https://source.unsplash.com/500x500/?The Golden Temple Amritsar" alt="img" class="imgFluid">
+        </div>
+    </section>
+
+    <section class="section section-left">
+        <div class="para">
+            <p class="secTag text-big">Hawa Mahal, Jaipur</p>
+            <p class="sectionSubTag text-small">The Hawa Mahal in Jaipur is considered as one of the most iconic
+                attractions of the city. The five-storey building looks like a honeycomb of a beehive and it is always
+                windy inside, owing to the numerous windows and jharokhas. This amazing ventilation that the palace
+                enjoys is the reason why it was named as the Hawa Mahal, which literally translates into the “Palace of
+                the Winds”.The Hawa Mahal is dedicated to Lord Krishna. It is said that the shape of the building
+                resembles the crown of Krishna. More than a palace, the Hawa Mahal is also a cultural and architectural
+                marvel that reflects a truly harmonious amalgamation of the Hindu Rajput and Islamic Mughal
+                architectural styles.</p>
+        </div>
+        <div class="thumbnail">
+            <img src="https://source.unsplash.com/500x500/?The hawa mahal" alt="img" class="imgFluid">
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="para">
+            <p class="secTag text-big">Manali, Himachal Pradesh</p>
+            <p class="sectionSubTag text-small">The very name Manali evokes visual of snow-covered mountains, stately
+                deodar tree, apple archards and tumbling Beas. So lucky are these who have opted for Manali, a calm and
+                quite place in the Western Himalayas as their holidays destination.
+                Away from the din and noice of the cities, it is a veritable dreams words where bountiful nature offers
+                variety of pleasures to all types of tourists having varying tastes. It is a nature lover’s paradise.
+                For the overworked urbanite, it is an ideal place to relex. The honey mooners enjoy ‘as you like it’
+                liberty.
+                The salubrious air of the valley fills the doting old personos with energy to spend the rest of their
+                evenings of life happily devoid of any ailments associated with old age.</p>
+        </div>
+        <div class="thumbnail">
+            <img src="https://source.unsplash.com/500x500/?manali Himachal Pradesh" alt="img" class="imgFluid">
+        </div>
+    </section>
+
+    <footer>
+        <p class="text-footer bg">
+            Copyright &copy; 2020 www.Travelista.com - All rights reserved
+        </p>
+
+    </footer>
+    <script src="{% static '/js/resp.js' %}"></script>
 {% endblock %}

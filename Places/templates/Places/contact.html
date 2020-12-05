@@ -1,0 +1,95 @@
+{% extends 'Places/base.html' %}
+{% load static %}
+{% block title %}Travelista | Contact Us{% endblock %}
+
+{% block content %}
+<nav class="navbar bg height-nav-resp ">
+        <ul class="nav-list v-class-resp">
+            <div class="logo"><img src="{% static '/images/logo.jpg' %}" alt="logo" class="lolo"></div>
+            <li class="listItem"><a href="{% url 'index' %}">Home</a></li>
+            <li class="listItem"><a href="{% url 'about' %}">About</a></li>
+            {% comment %} <li><a href="{% url 'city' %}">Best Places to Visit</a></li> {% endcomment %}
+            <li class="listItem"><a href="{% url 'contact' %}">Contact Us</a></li>
+        </ul>
+        
+        {% comment %} <div class="mt-5 text-center ml-auto mr-auto" style="max-width: 600px;">
+            <form action="city" method="GET">
+                <div class="input-group input-group-sm">
+                    <input type="text" class="form-control" name="city_name" placeholder="Enter city name...">
+                    <div class="input-group-append">
+                        <button class="btn btn-danger" type="submit">Search</button>
+                    </div>
+                </div>
+            </form>
+        </div> {% endcomment %}
+        
+        <div class="burger">
+            <div class="line"> </div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+    <section class="contact">
+        <div class="content">
+            <h2>Contact Us</h2>
+        </div>
+        <div class="contanier">
+            <div class="contactInfo">
+                <div class="box">
+                    <div class="icon">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>Address</h3>
+                        <p>Bundelkhand Institute Of Engineering & Technology,<br>Kanpur Road NH-25<br>JHANSI
+                            (U.P)-284128
+                        </p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon"><a href="tel:8005422620"><i class="fa fa-phone" aria-hidden="true"></i></a></div>
+                    <div class="text">
+                        <h3>Phone</h3>
+                        <p>8005422620</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon"><a href="mailto:travelista@gmail.com"><i class="fa fa-envelope-o"
+                                aria-hidden="true"></i></a></div>
+                    <div class="text">
+                        <h3>Email</h3>
+                        <p>travelista@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ContactForm">
+                <form>
+                    <h2>Send Us Message</h2>
+                    <div class="inputBox">
+                        <input type="text" name="" required="required">
+                        <span>Full Name</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" name="" required="required">
+                        <span>Email</span>
+                    </div>
+                    <div class="inputBox">
+                        <textarea required="required"></textarea>
+                        <span>Type Your Message...</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="submit" name="" value="Send">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <footer>
+            <div class="footer">
+                <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+                <a href="https://twitter.com/" class="fa fa-twitter"></a>
+                <a href="https://www.linkedin.com/in/" class="fa fa-linkedin"></a>
+                <a href="https://www.instagram.com/" class="fa fa-instagram"></a>
+            </div>
+        </footer>
+    </section>
+    <script src="{% static '/js/resp.js' %}"></script>
+{% endblock %}

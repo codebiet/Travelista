@@ -1,0 +1,145 @@
+{% extends 'Places/base.html' %}
+{% load static %}
+{% block title %}Travelista | About Us{% endblock %}
+
+{% block content %}
+<nav class="navbar bg height-nav-resp">
+        <ul class="nav-list v-class-resp">
+            <div class="logo"><img src="{% static '/images/logo.jpg' %}" alt="logo" class="lolo"></div>
+            <li class="listItem"><a href="{% url 'index' %}">Home</a></li>
+            <li class="listItem"><a href="{% url 'about' %}">About</a></li>
+            {% comment %} <li><a href="{% url 'city' %}">Best Places to Visit</a></li> {% endcomment %}
+            <li class="listItem"><a href="{% url 'contact' %}">Contact Us</a></li>
+        </ul>
+
+        {% comment %} <div class="mt-5 text-center ml-auto mr-auto" style="max-width: 600px;">
+            <form action="city" method="GET">
+                <div class="input-group input-group-sm">
+                    <input type="text" class="form-control" name="city_name" placeholder="Enter city name...">
+                    <div class="input-group-append">
+                        <button class="btn btn-danger" type="submit">Search</button>
+                    </div>
+                </div>
+            </form>
+        </div> {% endcomment %}
+
+        <div class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+    <section class="main">
+        <div class="container">
+            <div class="head">
+             <h1>About Travelista</h1>
+             <p class="para">Make your travel easy with Travelista.</p>
+            </div>
+
+            <div class="wrap">
+                <div class="wrap_photo1">
+                    <img src="{% static '/images/photo1.jpg' %}" alt="">
+                </div>
+            </div>
+
+            <div>
+                <h2 class="vision">Our Vision</h2>
+                <p class="vision_data">We are always there to make your travel full with comfort and with fun.
+                We always try to provide you accurate and real image of every of place.
+                </p>
+            </div>
+            <div>
+                <h2 class="team">Our Team</h2>
+                <p class="about">We are four engineering students who loves to travel and for the ease of other 
+                    people, we had developed this website.
+                </p>
+            </div>
+            <div class="row">
+                <div class="team-items">
+                    <div class="item">
+                        <img src="{% static '/images/hell.jpg' %}" alt="team">
+                        <div class="inner">
+                            <div class="info">
+                                 <h5>Vipin Gautam</h5>
+                                 <p>Our Mentor</p>
+                                 <div class="social-links">
+                                     <a href=""><span class="fa fa-facebook"></span></a>
+                                     <a href=""><span class="fa fa-twitter"></span></a>
+                                     <a href=""><span class="fa fa-linkedin"></span></a>
+                                     <a href=""><span class="fa fa-instagram"></span></a>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="item">
+                         <img src="{% static '/images/hell.jpg' %}" alt="team">
+                         <div class="inner">
+                             <div class="info">
+                                  <h5>Ankit Srivastava</h5>
+                                  <p>Designer</p>
+                                  <div class="social-links">
+                                      <a href=""><span class="fa fa-facebook"></span></a>
+                                      <a href=""><span class="fa fa-twitter"></span></a>
+                                      <a href=""><span class="fa fa-linkedin"></span></a>
+                                      <a href=""><span class="fa fa-instagram"></span></a>
+                                  </div>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="item">
+                         <img src="{% static '/images/hell.jpg' %}" alt="team">
+                         <div class="inner">
+                             <div class="info">
+                                  <h5>Parth Gupta</h5>
+                                  <p>Designer</p>
+                                  <div class="social-links">
+                                      <a href=""><span class="fa fa-facebook"></span></a>
+                                      <a href=""><span class="fa fa-twitter"></span></a>
+                                      <a href=""><span class="fa fa-linkedin"></span></a>
+                                      <a href=""><span class="fa fa-instagram"></span></a>
+                                  </div>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="item">
+                         <img src="{% static '/images/hell.jpg' %}" alt="team">
+                         <div class="inner">
+                             <div class="info">
+                                  <h5>Rajdeep Srivastava</h5>
+                                  <p>Designer</p>
+                                  <div class="social-links">
+                                      <a href=""><span class="fa fa-facebook"></span></a>
+                                      <a href=""><span class="fa fa-twitter"></span></a>
+                                      <a href=""><span class="fa fa-linkedin"></span></a>
+                                      <a href=""><span class="fa fa-instagram"></span></a>
+                                  </div>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="item">
+                         <img src="{% static '/images/hell.jpg' %}" alt="team">
+                         <div class="inner">
+                             <div class="info">
+                                  <h5>Tejashvi Goyal</h5>
+                                  <p>Designer</p>
+                                  <div class="social-links">
+                                      <a href=""><span class="fa fa-facebook"></span></a>
+                                      <a href=""><span class="fa fa-twitter"></span></a>
+                                      <a href=""><span class="fa fa-linkedin"></span></a>
+                                      <a href=""><span class="fa fa-instagram"></span></a>
+                                  </div>
+                             </div>
+                         </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+</section>
+<footer>
+    <p class="text-footer bg">
+        Copyright &copy; 2020 www.Travelista.com - All rights reserved
+    </p>
+   
+</footer>
+<script src="{% static '/js/resp.js' %}"></script>
+{% endblock %}

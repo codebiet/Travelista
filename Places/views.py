@@ -73,3 +73,10 @@ def food(request, city_name=None):
     context = {'restaurants': restaurants, 'city_name': city_name}
 
     return render(request, 'Places/food.html', context)
+
+
+def contact(request):
+    return render(request, 'Places/contact.html')
+
+def about(request):
+    return render(request, 'Places/about.html')
