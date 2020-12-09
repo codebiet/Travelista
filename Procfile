@@ -1,0 +1,1 @@
+web: gunicorn Travelista.wsgi --log-file -
