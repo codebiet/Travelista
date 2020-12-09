@@ -81,13 +81,14 @@ WSGI_APPLICATION = 'Travelista.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'travelista',
-        'USER': 'postgres',
-        'PASSWORD': '@Yash29*',
-        'HOST': 'localhost',
+        'NAME': 'ddlbqqjkncubjt',
+        'USER': 'ddqyctmcsgkqfu',
+        'PASSWORD': '7fca14b00ce194983c8515bc3c4f8e92c857524082f1a9c9cbf5e978bd5ee91a',
+        'HOST': 'ec2-54-166-114-48.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
+
 WHITENOISE_USE_FINDERS = True
 
 
