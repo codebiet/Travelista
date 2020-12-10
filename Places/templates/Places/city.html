@@ -7,18 +7,18 @@
 {% block css %}
 <style>
     body {
-        background: white;
+        background:white;
     }
 </style>
 {% endblock %}
 
 {% block content %}
-    <div class="container mt-5 mb-5" style="border: 2px solid rgb(255, 255, 255); border-radius: 5px; background: rgb(233, 255, 208);">
-        <div class="row">
+    <div class="container mt-5 mb-5">
+        <div class="row" style="justify-content: center;">
     
-            <div class="col-6 text-right">
+            <div style="font-size: 40px; ">
                 <small>
-                    <a href="{% url 'index' %}">Travelista</a>
+                    <a href="{% url 'index' %}">Home</a>
                 </small>
             </div>
             
@@ -26,7 +26,9 @@
 
         {% if para %}
             <div class="text-center mt-4">
-                <img class="img-fluid img-thumbnail" width="500px" src="{{ city_image_link }}" alt="{{ city_info.city_heading }} - Image">
+                <img class="img-fluid img-thumbnail" width="500px" src="{{ city_image_link }}" alt="{{ city_info.city_heading }} - Image" style="
+                border-radius: 20px;
+            ">
             </div>
 
             <div class="mt-4 text-center">
@@ -34,7 +36,11 @@
             </div>
 
             <div class="mt-2 text-center">
-                <p><i><b>COVID-19 Stats: </b></i><i class="text-danger">{{ covid_details }}</i></p>
+                <p style="
+                border: 1px solid grey;
+                border-radius: 5px;
+                height: 28px;
+            "><i><b>COVID-19 Stats: </b></i><i class="text-danger">{{ covid_details }}</i></p>
             </div>
 
             <div class="mt-4 text-justify">

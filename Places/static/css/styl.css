@@ -160,6 +160,9 @@
     text-decoration: none;
     padding: 0px 0px;
 }
+.faa {
+    padding: 0px 20px;
+}
   .fa:hover{
       color: #257be4;
   }
