@@ -56,21 +56,6 @@ def places_to_visit(request, city_name=None):
 
 
 def food(request, city_name=None):
-    # restaurants = {}
-
-    # if Food.objects.filter(city_name=city_name).exists():
-    #     data = Food.objects.get(city_name=city_name)
-    #     restaurants_data = {'names': data.names, 'info': data.info, 'photo_links': data.photo_links, 'res_items': data.res_items, 'total_restaurants': data.total_restaurants}
-
-    # else:
-    #     restaurants_data = scraping.food(city_name)
-    #     instance = Food(city_name=city_name, names=restaurants_data['names'], info=restaurants_data['info'], photo_links=restaurants_data['photo_links'], res_items=restaurants_data['res_items'], total_restaurants=restaurants_data['total_restaurants'])
-    #     instance.save()
-
-    # for i in range(restaurants_data['total_restaurants']):
-    #     restaurants[i+1] = {'name': restaurants_data['names'][i], 'info': restaurants_data['info'][i], 'photo_link': restaurants_data['photo_links'][i], 'res_items': restaurants_data['res_items'][i]}
-    
-    # context = {'restaurants': restaurants, 'city_name': city_name}
     restaurants = {}
     restaurants_data = {}
 
@@ -90,6 +75,7 @@ def food(request, city_name=None):
             restaurants[i+1] = {'name': restaurants_data['names'][i], 'info': restaurants_data['info'][i], 'photo_link': restaurants_data['photo_links'][i], 'res_items': restaurants_data['res_items'][i]}
     
     context = {'restaurants': restaurants, 'city_name': city_name}
+    
     return render(request, 'Places/food.html', context)
 
 

@@ -87,6 +87,14 @@ DATABASES = {
         'HOST': 'ec2-54-166-114-48.compute-1.amazonaws.com',
         'PORT': '5432',
     }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'travelista',
+    #     'USER': 'postgres',
+    #     'PASSWORD': '@Yash29*',
+    #     'HOST': '127.0.0.1',
+    #     'PORT': '5432',
+    # }
 }
 
 # WHITENOISE_USE_FINDERS = True
@@ -129,6 +137,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
 # STATICFILES_DIRS = [
 #     os.path.join(BASE_DIR, "static"),
 # ]
