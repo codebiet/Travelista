@@ -3,7 +3,7 @@
 {% block title %}Travelista | About Us{% endblock %}
 
 {% block content %}
-<nav class="navbar bg height-nav-resp">
+<nav class="navbar bg height-nav-resp" style="position: inherit;">
         <ul class="nav-list v-class-resp">
             <div class="logo"><img src="{% static '/images/logo.jpg' %}" alt="logo" class="lolo"></div>
             <li class="listItem"><a href="{% url 'index' %}">Home</a></li>
@@ -31,16 +31,19 @@
     </nav>
     <section class="main">
         <div class="container">
-            <div class="head">
+            <div class="head" style="
+            position: inherit;
+            background: none;
+            margin: 0 auto;">
              <h1>About Travelista</h1>
              <p class="para">Make your travel easy with Travelista.</p>
             </div>
 
-            <div class="wrap">
+            {% comment %} <div class="wrap">
                 <div class="wrap_photo1">
                     <img src="{% static '/images/photo1.jpg' %}" alt="">
                 </div>
-            </div>
+            </div> {% endcomment %}
 
             <div>
                 <h2 class="vision">Our Vision</h2>
@@ -57,8 +60,8 @@
             <div class="row">
                 <div class="team-items">
                      <div class="item">
-                         <img src="{% static '/images/img3.jpeg' %}" alt="team">
-                         <div class="inner">
+                         <img src="{% static '/images/img3.jpeg' %}" alt="team" style="width: 88%;">
+                         <div class="inner" style="width: 87%; height: 90%;">
                              <div class="info">
                                   <h5>Parth Gupta</h5>
                                   <p>Back End Developer</p>
@@ -72,8 +75,8 @@
                          </div>
                      </div>
                      <div class="item">
-                         <img src="{% static '/images/img29.jpg' %}" alt="team">
-                         <div class="inner">
+                         <img src="{% static '/images/img29.jpg' %}" alt="team" style="width: 88%;">
+                         <div class="inner" style="width: 87%; height: 90%;">
                              <div class="info">
                                   <h5>Tejashvi Goyal</h5>
                                   <p>Back End Developer</p>
@@ -87,8 +90,8 @@
                          </div>
                      </div>
                      <div class="item">
-                         <img src="{% static '/images/img1.jpeg' %}" alt="team">
-                         <div class="inner">
+                         <img src="{% static '/images/img1.jpeg' %}" alt="team" style="width: 88%;">
+                         <div class="inner" style="width: 87%; height: 90%;">
                              <div class="info">
                                   <h5>Rajdeep Srivastava</h5>
                                   <p>Front End Developer</p>
@@ -102,8 +105,8 @@
                          </div>
                      </div>
                      <div class="item">
-                         <img src="{% static '/images/img21.jpg' %}" alt="team">
-                         <div class="inner">
+                         <img src="{% static '/images/img21.jpg' %}" alt="team" style="width: 88%;">
+                         <div class="inner" style="width: 87%; height: 90%;">
                              <div class="info">
                                   <h5>Ankit Srivastava</h5>
                                   <p>Front End Developer</p>
@@ -121,7 +124,7 @@
         </div>
 </section>
 <footer>
-    <p class="text-footer bg">
+    <p class="text-footer bg" style="margin: 0 auto;">
         Copyright &copy; 2020 www.Travelista.com - All rights reserved
     </p>
    
