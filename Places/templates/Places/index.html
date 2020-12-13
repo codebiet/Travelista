@@ -5,7 +5,7 @@
 
 
 {% block content %}
-<nav class="navbar bg height-nav-resp">
+<nav class="navbar bg height-nav-resp" style="z-index: 2;">
     <ul class="nav-list v-class-resp">
         <div class="logo"><img src="{% static '/images/logo.jpg' %}" alt="logo" class="lolo"></div>
         <li class="listItem"><a href="{% url 'index' %}">Home</a></li>
@@ -25,16 +25,16 @@
 
         <div class="first-half">
             <p class="text-big" style="margin-bottom: 18px;">Welcome to Travelista</p>
-            <p class="text-small">Makes you Travel Easy.</p>
+            <p class="text-small">Makes your Travel Easy.</p>
         </div>
 
-        <div class="second-half">
+        {% comment %} <div class="second-half">
             <img src="{% static '/images/mid.png' %}" alt="india toursim">
-        </div>
+        </div> {% endcomment %}
 
     </div>
 
-    <div class="mt-5 text-center ml-auto mr-auto" style="max-width: 500px;">
+    <div class="mt-5 text-center ml-auto mr-auto" style="max-width: 500px; position: relative; z-index: 1;">
         <form action="city" method="GET">
             <div class="input-group input-group-sm" style="margin: 3%;">
                 <input type="text" class="form-control" name="city_name" placeholder="Enter city name..." style="
