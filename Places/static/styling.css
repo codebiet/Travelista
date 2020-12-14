@@ -96,7 +96,7 @@ html{
 }
 
 .first-half{
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center; 
@@ -116,9 +116,11 @@ html{
 
 .text-big{
     font-size: 43px;
+    text-align: center;
 }
 
 .text-small{
+    text-align: center;
     margin-top: 10px;
     font-size: 18px;
 }
