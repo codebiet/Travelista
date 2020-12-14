@@ -249,11 +249,3 @@ html{
     text-align: center;
 }
 
-@media only screen and (max-width: 960px){
-    .navbar{
-        height: 225px;
-    }
-    /* .height-nav-resp{
-        height: 40px
-    }  */
-}
